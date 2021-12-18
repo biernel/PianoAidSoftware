@@ -17,7 +17,7 @@ void InitializeHeartBeat() {
   Serial.println(HEARTBEAT_LIB_VERSION);
 
   pinMode(LED_BUILTIN, OUTPUT);
-  HB.begin(LED_BUILTIN, 0.5);  // frequency 0.5
+  HB.begin(LED_BUILTIN, 1);  // frequency 0.5
 }
 
 void InitializeButton(){
