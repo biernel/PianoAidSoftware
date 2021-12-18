@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PianoAid4Android", "PianoAid4Android\PianoAid4Android.csproj", "{FF3F51C7-7441-45CA-9FCF-DCCD93774056}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PianoAid4Web", "PianoAid4Web\PianoAid4Web.csproj", "{02127311-F3BE-4E0F-972C-7084FB690069}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PianoAid4Windows", "PianoAid4Windows\PianoAid4Windows.csproj", "{A3F993BC-DF15-401E-A9BC-266773A9FC13}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PianoAidCore", "PianoAidCore\PianoAidCore.csproj", "{56287E8B-D2F3-4E6E-9F6F-358E3F7CCA52}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF3F51C7-7441-45CA-9FCF-DCCD93774056}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF3F51C7-7441-45CA-9FCF-DCCD93774056}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF3F51C7-7441-45CA-9FCF-DCCD93774056}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{FF3F51C7-7441-45CA-9FCF-DCCD93774056}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF3F51C7-7441-45CA-9FCF-DCCD93774056}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF3F51C7-7441-45CA-9FCF-DCCD93774056}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{02127311-F3BE-4E0F-972C-7084FB690069}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02127311-F3BE-4E0F-972C-7084FB690069}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02127311-F3BE-4E0F-972C-7084FB690069}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02127311-F3BE-4E0F-972C-7084FB690069}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3F993BC-DF15-401E-A9BC-266773A9FC13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3F993BC-DF15-401E-A9BC-266773A9FC13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3F993BC-DF15-401E-A9BC-266773A9FC13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3F993BC-DF15-401E-A9BC-266773A9FC13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56287E8B-D2F3-4E6E-9F6F-358E3F7CCA52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56287E8B-D2F3-4E6E-9F6F-358E3F7CCA52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56287E8B-D2F3-4E6E-9F6F-358E3F7CCA52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56287E8B-D2F3-4E6E-9F6F-358E3F7CCA52}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5EC6FF6D-34E5-447A-8E1D-8B6A9903EB39}
+	EndGlobalSection
+EndGlobal
