@@ -24,7 +24,7 @@ namespace PianoAid4Windows
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-
+            lblSelectedCommPort.Text = "";
 
         }      
 
@@ -52,6 +52,7 @@ namespace PianoAid4Windows
             frmSettings.ShowDialog();
             if (!string.IsNullOrEmpty(frmSettings.SelectedPortName))
             {
+                lblSelectedCommPort.Text = frmSettings.SelectedPortName;
                 _serialPort = new SerialPort(frmSettings.SelectedPortName, 9600);
                 _serialPort.Open();
             }

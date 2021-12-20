@@ -31,6 +31,7 @@ namespace PianoAid4Windows
         {
             this.chkCommunication = new System.Windows.Forms.CheckBox();
             this.btnSettings = new System.Windows.Forms.Button();
+            this.lblSelectedCommPort = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // chkCommunication
@@ -56,11 +57,23 @@ namespace PianoAid4Windows
             this.btnSettings.UseVisualStyleBackColor = true;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
+            // lblSelectedCommPort
+            // 
+            this.lblSelectedCommPort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSelectedCommPort.AutoSize = true;
+            this.lblSelectedCommPort.Location = new System.Drawing.Point(707, 17);
+            this.lblSelectedCommPort.Name = "lblSelectedCommPort";
+            this.lblSelectedCommPort.Size = new System.Drawing.Size(50, 13);
+            this.lblSelectedCommPort.TabIndex = 2;
+            this.lblSelectedCommPort.Text = "CommXX";
+            this.lblSelectedCommPort.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblSelectedCommPort);
             this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.chkCommunication);
             this.Location = new System.Drawing.Point(0, 0);
@@ -77,6 +90,7 @@ namespace PianoAid4Windows
 
         private System.Windows.Forms.CheckBox chkCommunication;
         private System.Windows.Forms.Button btnSettings;
+        private System.Windows.Forms.Label lblSelectedCommPort;
     }
 }
 
