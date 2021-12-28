@@ -19,6 +19,7 @@ namespace PianoAid4Windows
         }
 
         private frmSettings frmSettings = new frmSettings();
+        private frmPlaySong frmPlaySong = new frmPlaySong();
 
         static SerialPort _serialPort;
 
@@ -56,6 +57,29 @@ namespace PianoAid4Windows
                 _serialPort = new SerialPort(frmSettings.SelectedPortName, 9600);
                 _serialPort.Open();
             }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSongName_Click(object sender, EventArgs e)
+        {
+            
+           frmPlaySong.ShowDialog();
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

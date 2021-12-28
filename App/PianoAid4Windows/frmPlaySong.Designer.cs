@@ -1,7 +1,7 @@
 ﻿
 namespace PianoAid4Windows
 {
-    partial class frmStyling
+    partial class frmPlaySong
     {
         /// <summary>
         /// Required designer variable.
@@ -29,20 +29,10 @@ namespace PianoAid4Windows
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // frmStyling
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(243)))), ((int)(((byte)(239)))));
-            this.ClientSize = new System.Drawing.Size(946, 498);
-            this.ForeColor = System.Drawing.Color.Black;
-            this.Name = "frmStyling";
-            this.Text = "Styling";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.ResumeLayout(false);
-
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "frmPlaySong";
         }
 
         #endregion

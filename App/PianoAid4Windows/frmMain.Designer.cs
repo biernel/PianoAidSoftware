@@ -29,15 +29,21 @@ namespace PianoAid4Windows
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.chkCommunication = new System.Windows.Forms.CheckBox();
             this.btnSettings = new System.Windows.Forms.Button();
             this.lblSelectedCommPort = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnSongName = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // chkCommunication
             // 
+            this.chkCommunication.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.chkCommunication.AutoSize = true;
-            this.chkCommunication.Location = new System.Drawing.Point(128, 127);
+            this.chkCommunication.ForeColor = System.Drawing.Color.Black;
+            this.chkCommunication.Location = new System.Drawing.Point(888, 614);
             this.chkCommunication.Name = "chkCommunication";
             this.chkCommunication.Size = new System.Drawing.Size(170, 17);
             this.chkCommunication.TabIndex = 0;
@@ -49,7 +55,7 @@ namespace PianoAid4Windows
             // 
             this.btnSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSettings.ForeColor = System.Drawing.Color.Black;
-            this.btnSettings.Location = new System.Drawing.Point(763, 12);
+            this.btnSettings.Location = new System.Drawing.Point(1033, 12);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(25, 23);
             this.btnSettings.TabIndex = 1;
@@ -61,18 +67,44 @@ namespace PianoAid4Windows
             // 
             this.lblSelectedCommPort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSelectedCommPort.AutoSize = true;
-            this.lblSelectedCommPort.Location = new System.Drawing.Point(707, 17);
+            this.lblSelectedCommPort.ForeColor = System.Drawing.Color.Black;
+            this.lblSelectedCommPort.Location = new System.Drawing.Point(977, 17);
             this.lblSelectedCommPort.Name = "lblSelectedCommPort";
             this.lblSelectedCommPort.Size = new System.Drawing.Size(50, 13);
             this.lblSelectedCommPort.TabIndex = 2;
             this.lblSelectedCommPort.Text = "CommXX";
             this.lblSelectedCommPort.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(210, 222);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(180, 174);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // btnSongName
+            // 
+            this.btnSongName.ForeColor = System.Drawing.Color.Black;
+            this.btnSongName.Location = new System.Drawing.Point(210, 402);
+            this.btnSongName.Name = "btnSongName";
+            this.btnSongName.Size = new System.Drawing.Size(180, 25);
+            this.btnSongName.TabIndex = 4;
+            this.btnSongName.Text = "I Wanted To Leave";
+            this.btnSongName.UseVisualStyleBackColor = true;
+            this.btnSongName.Click += new System.EventHandler(this.btnSongName_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(243)))), ((int)(((byte)(239)))));
+            this.ClientSize = new System.Drawing.Size(1070, 643);
+            this.Controls.Add(this.btnSongName);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblSelectedCommPort);
             this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.chkCommunication);
@@ -81,6 +113,7 @@ namespace PianoAid4Windows
             this.Text = "Piano Aid";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -91,6 +124,8 @@ namespace PianoAid4Windows
         private System.Windows.Forms.CheckBox chkCommunication;
         private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Label lblSelectedCommPort;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnSongName;
     }
 }
 
