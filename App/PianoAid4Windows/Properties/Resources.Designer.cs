@@ -59,15 +59,5 @@ namespace PianoAid4Windows.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Song1_page_1 {
-            get {
-                object obj = ResourceManager.GetObject("Song1-page-1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }
