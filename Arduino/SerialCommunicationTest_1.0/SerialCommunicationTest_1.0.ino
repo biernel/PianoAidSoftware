@@ -25,14 +25,16 @@ void InitializeButton(){
 }
 
 void InitializeUsbCommunication(){
-  Serial.begin(9600);  //initialize serial comm 
+  Serial.begin(115200);  //initialize serial comm 
 }
 
 void HeartBeatFast(){
+  Serial.println("Heartbeat fast");
   HB.begin(LED_BUILTIN, 8);
 }
 
 void HeartBeatSlow(){
+  Serial.println("Heartbeat slow");
   HB.begin(LED_BUILTIN, 2);
 }
 
