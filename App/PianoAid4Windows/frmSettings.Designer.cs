@@ -29,18 +29,8 @@ namespace PianoAid4Windows
         /// </summary>
         private void InitializeComponent()
         {
-            this.cmbAvailablePorts = new System.Windows.Forms.ComboBox();
             this.btnSaveSettings = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // cmbAvailablePorts
-            // 
-            this.cmbAvailablePorts.FormattingEnabled = true;
-            this.cmbAvailablePorts.Location = new System.Drawing.Point(124, 91);
-            this.cmbAvailablePorts.Name = "cmbAvailablePorts";
-            this.cmbAvailablePorts.Size = new System.Drawing.Size(121, 21);
-            this.cmbAvailablePorts.TabIndex = 0;
-            this.cmbAvailablePorts.SelectedIndexChanged += new System.EventHandler(this.cmbAvailablePorts_SelectedIndexChanged);
             // 
             // btnSaveSettings
             // 
@@ -60,7 +50,7 @@ namespace PianoAid4Windows
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 522);
             this.Controls.Add(this.btnSaveSettings);
-            this.Controls.Add(this.cmbAvailablePorts);
+            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "frmSettings";
             this.Text = "Settings";
             this.Load += new System.EventHandler(this.frmSettings_Load);
@@ -69,8 +59,6 @@ namespace PianoAid4Windows
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox cmbAvailablePorts;
         private System.Windows.Forms.Button btnSaveSettings;
     }
 }
