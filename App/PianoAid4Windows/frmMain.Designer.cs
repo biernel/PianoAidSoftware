@@ -32,7 +32,6 @@ namespace PianoAid4Windows
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.btnSongName = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnMidiFile = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,17 +55,6 @@ namespace PianoAid4Windows
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
-
-            // 
-            // btnMidiFile
-            // 
-            this.btnMidiFile.Location = new System.Drawing.Point(476, 103);
-            this.btnMidiFile.Name = "btnMidiFile";
-            this.btnMidiFile.Size = new System.Drawing.Size(132, 21);
-            this.btnMidiFile.TabIndex = 9;
-            this.btnMidiFile.Text = "midi file convertor";
-            this.btnMidiFile.UseVisualStyleBackColor = true;
-            this.btnMidiFile.Click += new System.EventHandler(this.btnMidiFile_Click);
             // 
             // frmMain
             // 
@@ -74,7 +62,6 @@ namespace PianoAid4Windows
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(243)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(1070, 496);
-            this.Controls.Add(this.btnMidiFile);
             this.Controls.Add(this.btnSongName);
             this.Controls.Add(this.pictureBox1);
             this.Location = new System.Drawing.Point(0, 0);
@@ -88,7 +75,6 @@ namespace PianoAid4Windows
         #endregion
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnSongName;
-        private System.Windows.Forms.Button btnMidiFile;
     }
 }
 

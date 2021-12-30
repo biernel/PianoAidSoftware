@@ -10,18 +10,92 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Timers;
 
 namespace PianoAid4Windows
 {
     public partial class frmPlaySong : Form
     {
+        System.Timers.Timer timer = new System.Timers.Timer(1);
+        private int sequenceCounter = 0;
         public frmPlaySong()
         {
             InitializeComponent();
+            timer.Elapsed += OnTimedEvent;
         }
+
+        private void btnStartSong_Click(object sender, EventArgs e)
+        {
+            timer.Start();
+        }
+        private void btnStopSong_Click(object sender, EventArgs e)
+        {
+            timer.Stop();
+        }
+
+        private void btnResetSong_Click(object sender, EventArgs e)
+        {
+            timer.Stop();
+            sequenceCounter = 0;
+        }
+
+        private void OnTimedEvent(Object source, ElapsedEventArgs e)
+        {
+            //var signalTime = e.SignalTime;
+            sequenceCounter += 4;
+
+            if (langPapiereke.ContainsKey((long)sequenceCounter))
+            {
+                if (_serialPort == null)
+                    return;
+                _serialPort.Write(langPapiereke[(long)sequenceCounter] + "#>");
+            }
+
+        }
+
+        Dictionary<long, String> langPapiereke;
+
         private void frmPlaySong_Load(object sender, EventArgs e)
         {
             LoadAvailableCommPorts();
+
+            langPapiereke = ConvertMidiFileToSongSequenceList(PathToMidiFile);
+        }
+
+        private void frmPlaySong_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (_serialPort != null)
+                _serialPort.Close();
+        }
+
+        private static Dictionary<long, string> ConvertMidiFileToSongSequenceList(string pathToMidiFile)
+        {
+            var file = MidiFile.Read(pathToMidiFile);
+            var notes = file.GetNotes();
+            var tempoMap = file.GetTempoMap();
+            var langPapiereke = new Dictionary<long, string>();
+            foreach (var note in notes)
+            {
+                //MetricTimeSpan metricTime = note.TimeAs<MetricTimeSpan>(tempoMap);
+                //MetricTimeSpan metricLength = note.LengthAs<MetricTimeSpan>(tempoMap);
+
+                var ledId = mapMidiNoteNumberToLedID(note.NoteNumber);
+                if (!langPapiereke.ContainsKey(note.Time))
+                    langPapiereke.Add(note.Time, ledId);
+                else
+                    langPapiereke[note.Time] += ledId;
+            }
+
+            return langPapiereke;
+        }
+
+        private static string mapMidiNoteNumberToLedID(int midiNoteNumber)
+        {
+
+            var ledID = midiNoteNumber - 24;
+
+            return ledID.ToString().PadLeft(2, '0');
+
         }
 
         public string PathToMidiFile { get; set; }
@@ -117,11 +191,7 @@ namespace PianoAid4Windows
             }
         }
 
-        private void frmPlaySong_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (_serialPort != null)
-                _serialPort.Close();
-        }
+        
 
         private void chkCommunication_CheckedChanged(object sender, EventArgs e)
         {
@@ -149,5 +219,12 @@ namespace PianoAid4Windows
             strReceived = new List<string>();
             txtReceived.Text = "";
         }
+
+        private void txtCommand_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

@@ -35,6 +35,9 @@ namespace PianoAid4Windows
             this.txtReceived = new System.Windows.Forms.TextBox();
             this.chkCommunication = new System.Windows.Forms.CheckBox();
             this.cmbAvailablePorts = new System.Windows.Forms.ComboBox();
+            this.btnStartSong = new System.Windows.Forms.Button();
+            this.btnStopSong = new System.Windows.Forms.Button();
+            this.btnResetSong = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtCommand
@@ -44,6 +47,7 @@ namespace PianoAid4Windows
             this.txtCommand.Size = new System.Drawing.Size(321, 20);
             this.txtCommand.TabIndex = 0;
             this.txtCommand.Text = "01030610";
+            this.txtCommand.TextChanged += new System.EventHandler(this.txtCommand_TextChanged);
             // 
             // btnSendCommand
             // 
@@ -79,7 +83,7 @@ namespace PianoAid4Windows
             this.chkCommunication.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.chkCommunication.AutoSize = true;
             this.chkCommunication.ForeColor = System.Drawing.Color.Black;
-            this.chkCommunication.Location = new System.Drawing.Point(1031, 415);
+            this.chkCommunication.Location = new System.Drawing.Point(1031, 340);
             this.chkCommunication.Name = "chkCommunication";
             this.chkCommunication.Size = new System.Drawing.Size(170, 17);
             this.chkCommunication.TabIndex = 11;
@@ -91,17 +95,50 @@ namespace PianoAid4Windows
             // 
             this.cmbAvailablePorts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cmbAvailablePorts.FormattingEnabled = true;
-            this.cmbAvailablePorts.Location = new System.Drawing.Point(12, 581);
+            this.cmbAvailablePorts.Location = new System.Drawing.Point(12, 506);
             this.cmbAvailablePorts.Name = "cmbAvailablePorts";
             this.cmbAvailablePorts.Size = new System.Drawing.Size(121, 21);
             this.cmbAvailablePorts.TabIndex = 14;
             this.cmbAvailablePorts.SelectedIndexChanged += new System.EventHandler(this.cmbAvailablePorts_SelectedIndexChanged);
             // 
+            // btnStartSong
+            // 
+            this.btnStartSong.Location = new System.Drawing.Point(148, 501);
+            this.btnStartSong.Name = "btnStartSong";
+            this.btnStartSong.Size = new System.Drawing.Size(88, 28);
+            this.btnStartSong.TabIndex = 15;
+            this.btnStartSong.Text = "START";
+            this.btnStartSong.UseVisualStyleBackColor = true;
+            this.btnStartSong.Click += new System.EventHandler(this.btnStartSong_Click);
+            // 
+            // btnStopSong
+            // 
+            this.btnStopSong.Location = new System.Drawing.Point(242, 501);
+            this.btnStopSong.Name = "btnStopSong";
+            this.btnStopSong.Size = new System.Drawing.Size(86, 28);
+            this.btnStopSong.TabIndex = 16;
+            this.btnStopSong.Text = "STOP";
+            this.btnStopSong.UseVisualStyleBackColor = true;
+            this.btnStopSong.Click += new System.EventHandler(this.btnStopSong_Click);
+            // 
+            // btnResetSong
+            // 
+            this.btnResetSong.Location = new System.Drawing.Point(334, 501);
+            this.btnResetSong.Name = "btnResetSong";
+            this.btnResetSong.Size = new System.Drawing.Size(88, 28);
+            this.btnResetSong.TabIndex = 17;
+            this.btnResetSong.Text = "RESET";
+            this.btnResetSong.UseVisualStyleBackColor = true;
+            this.btnResetSong.Click += new System.EventHandler(this.btnResetSong_Click);
+            // 
             // frmPlaySong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1241, 614);
+            this.ClientSize = new System.Drawing.Size(1241, 539);
+            this.Controls.Add(this.btnResetSong);
+            this.Controls.Add(this.btnStopSong);
+            this.Controls.Add(this.btnStartSong);
             this.Controls.Add(this.cmbAvailablePorts);
             this.Controls.Add(this.chkCommunication);
             this.Controls.Add(this.txtReceived);
@@ -110,6 +147,7 @@ namespace PianoAid4Windows
             this.Controls.Add(this.txtCommand);
             this.Name = "frmPlaySong";
             this.Text = "frmPlaySong";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPlaySong_FormClosing);
             this.Load += new System.EventHandler(this.frmPlaySong_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -124,5 +162,8 @@ namespace PianoAid4Windows
         private System.Windows.Forms.TextBox txtReceived;
         private System.Windows.Forms.CheckBox chkCommunication;
         private System.Windows.Forms.ComboBox cmbAvailablePorts;
+        private System.Windows.Forms.Button btnStartSong;
+        private System.Windows.Forms.Button btnStopSong;
+        private System.Windows.Forms.Button btnResetSong;
     }
 }
