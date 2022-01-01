@@ -14,15 +14,17 @@ using System.Timers;
 
 namespace PianoAid4Windows
 {
-    public partial class frmPlaySong : Form
+    public partial class frmPlaySong : frmStyling
     {
         System.Timers.Timer timer = new System.Timers.Timer(1);
         private int sequenceCounter = 0;
-        public frmPlaySong()
+        public frmPlaySong(string pathToMidiFile)
         {
+            _pathToMidiFile = pathToMidiFile;
             InitializeComponent();
             timer.Elapsed += OnTimedEvent;
         }
+        private string _pathToMidiFile;
 
         private void btnStartSong_Click(object sender, EventArgs e)
         {
@@ -59,7 +61,7 @@ namespace PianoAid4Windows
         {
             LoadAvailableCommPorts();
 
-            langPapiereke = ConvertMidiFileToSongSequenceList(PathToMidiFile);
+            langPapiereke = ConvertMidiFileToSongSequenceList(_pathToMidiFile);
         }
 
         private void frmPlaySong_FormClosing(object sender, FormClosingEventArgs e)
@@ -70,6 +72,10 @@ namespace PianoAid4Windows
 
         private static Dictionary<long, string> ConvertMidiFileToSongSequenceList(string pathToMidiFile)
         {
+            //Note has Time and Length properties. Units of values returned by these properties defined by the time division of a MIDI file.
+            //But you can get time and length of a note in more understandable format.For hours, minutes, seconds you can write:
+            //Using TimeAs and LengthAs methods you don't need to do any calculations by yourself. Instance of MetricTimeSpan can be implicitly casted to TimeSpan.
+
             var file = MidiFile.Read(pathToMidiFile);
             var notes = file.GetNotes();
             var tempoMap = file.GetTempoMap();
@@ -97,8 +103,6 @@ namespace PianoAid4Windows
             return ledID.ToString().PadLeft(2, '0');
 
         }
-
-        public string PathToMidiFile { get; set; }
 
         private void LoadAvailableCommPorts()
         {
@@ -191,7 +195,7 @@ namespace PianoAid4Windows
             }
         }
 
-        
+
 
         private void chkCommunication_CheckedChanged(object sender, EventArgs e)
         {
@@ -220,11 +224,12 @@ namespace PianoAid4Windows
             txtReceived.Text = "";
         }
 
-        private void txtCommand_TextChanged(object sender, EventArgs e)
+        private void frmPlaySong_KeyUp(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.F12 && pnlDebug.Visible)
+                pnlDebug.Visible = false;
+            else
+                pnlDebug.Visible = true;
         }
-
-
     }
 }

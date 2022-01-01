@@ -39,8 +39,10 @@ namespace PianoAid4Windows
             this.ClientSize = new System.Drawing.Size(946, 498);
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "frmStyling";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Styling";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmStyling_Load);
             this.ResumeLayout(false);
 
         }

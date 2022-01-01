@@ -16,5 +16,10 @@ namespace PianoAid4Windows
         {
             InitializeComponent();
         }
+
+        private void frmStyling_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

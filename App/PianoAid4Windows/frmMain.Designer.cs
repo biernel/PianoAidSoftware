@@ -29,52 +29,46 @@ namespace PianoAid4Windows
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            this.btnSongName = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tblSongList = new System.Windows.Forms.TableLayoutPanel();
             this.SuspendLayout();
             // 
-            // btnSongName
+            // tblSongList
             // 
-            this.btnSongName.ForeColor = System.Drawing.Color.Black;
-            this.btnSongName.Location = new System.Drawing.Point(45, 248);
-            this.btnSongName.Name = "btnSongName";
-            this.btnSongName.Size = new System.Drawing.Size(180, 25);
-            this.btnSongName.TabIndex = 4;
-            this.btnSongName.Text = "I Wanted To Leave";
-            this.btnSongName.UseVisualStyleBackColor = true;
-            this.btnSongName.Click += new System.EventHandler(this.btnSongName_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(45, 68);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(180, 174);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.tblSongList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tblSongList.AutoScroll = true;
+            this.tblSongList.AutoSize = true;
+            this.tblSongList.ColumnCount = 3;
+            this.tblSongList.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.64627F));
+            this.tblSongList.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.35374F));
+            this.tblSongList.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 473F));
+            this.tblSongList.Location = new System.Drawing.Point(12, 87);
+            this.tblSongList.Name = "tblSongList";
+            this.tblSongList.RowCount = 1;
+            this.tblSongList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblSongList.Size = new System.Drawing.Size(1291, 638);
+            this.tblSongList.TabIndex = 5;
+            this.tblSongList.CellPaint += new System.Windows.Forms.TableLayoutCellPaintEventHandler(this.tblSongList_CellPaint);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(243)))), ((int)(((byte)(239)))));
-            this.ClientSize = new System.Drawing.Size(1070, 496);
-            this.Controls.Add(this.btnSongName);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(1315, 737);
+            this.Controls.Add(this.tblSongList);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "frmMain";
             this.Text = "Piano Aid";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnSongName;
+        private System.Windows.Forms.TableLayoutPanel tblSongList;
     }
 }
 

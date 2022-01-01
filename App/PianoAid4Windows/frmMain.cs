@@ -21,33 +21,76 @@ namespace PianoAid4Windows
         public frmMain()
         {
             InitializeComponent();
-        }
 
-        private frmSettings frmSettings = new frmSettings();
-        private frmPlaySong frmPlaySong = new frmPlaySong();
-
-
-        private void btnSongName_Click(object sender, EventArgs e)
-        {
-            frmPlaySong.PathToMidiFile = @"C:\Data\eline\school\2021-2022\GIP\PianoAid Software\PianoAidSoftware\App\MidiFile\FirstChords.mid";
-            frmPlaySong.ShowDialog();
-
-        }
+            var songLoader = new SongLoader();
+            var songs = songLoader.LoadSongs(@"C:\Data\eline\school\2021-2022\GIP\PianoAid Software\PianoAidSoftware\App\Songs");
 
 
-        //private void btnMidiFile_Click(object sender, EventArgs e)
-        //{
+            var songCounter = 0;
+            var columnCounter = 0;
 
-        //    //Note has Time and Length properties. Units of values returned by these properties defined by the time division of a MIDI file.
-        //    //But you can get time and length of a note in more understandable format.For hours, minutes, seconds you can write:
-        //    //Using TimeAs and LengthAs methods you don't need to do any calculations by yourself. Instance of MetricTimeSpan can be implicitly casted to TimeSpan.
+            tblSongList.RowCount -= 1;
+            tblSongList.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tblSongList.RowStyles.Clear();
+            tblSongList.ColumnStyles.Clear();
+            tblSongList.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33));
+            tblSongList.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33));
+            tblSongList.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33));
 
             
+            foreach (var songKeyValuePair in songs)
+            {
+                columnCounter = songCounter % 3;
+                
+                if (songCounter % 3 == 0) { 
+                    tblSongList.RowCount += 1;
+                    tblSongList.RowStyles.Add(new RowStyle(SizeType.Absolute, 350f));
+                }
+
+                var panel = new Panel();
+                panel.Size = new Size(250, 350);
+                var pictureBox = new PictureBox();
+                pictureBox.Size = new Size(240, 250);
+                pictureBox.SizeMode = PictureBoxSizeMode.AutoSize;
+                pictureBox.Image = Image.FromFile(songKeyValuePair.Value.PathToImage);
+                pictureBox.Anchor = AnchorStyles.None;
+                panel.Controls.Add(pictureBox);
+
+                var button = new Button();
+                button.Text = songKeyValuePair.Key;
+                button.Tag = songKeyValuePair.Value.PathToMidiFile;
+                button.Click += Button_Click;
+                button.Anchor = AnchorStyles.None;
+                button.Size = new Size(226, 40);
+                button.Top = 230;
+                panel.Controls.Add(button);
+
+                panel.Anchor = AnchorStyles.None;
+                tblSongList.Controls.Add(panel, columnCounter, tblSongList.RowCount - 1);
+
+                songCounter++;
+            }
+        }
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            tblSongList.MaximumSize = this.Size;
+            tblSongList.AutoScroll = true;
+            tblSongList.AutoSize = true;
+        }
+
+        private void Button_Click(object sender, EventArgs e)
+        {
+            var button = (Button)sender;
+
+            var frmPlaySong = new frmPlaySong((string) button.Tag);
+            frmPlaySong.ShowDialog();
+        }
+
+        private void tblSongList_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
+        {
+            //e.Graphics.DrawRectangle(new Pen(Color.Gray), e.CellBounds);
+        }
 
 
-
-        //}
-
-        
     }
 }
