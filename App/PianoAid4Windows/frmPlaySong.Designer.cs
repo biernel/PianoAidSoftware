@@ -95,7 +95,7 @@ namespace PianoAid4Windows
             // 
             this.cmbAvailablePorts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cmbAvailablePorts.FormattingEnabled = true;
-            this.cmbAvailablePorts.Location = new System.Drawing.Point(12, 505);
+            this.cmbAvailablePorts.Location = new System.Drawing.Point(12, 621);
             this.cmbAvailablePorts.Name = "cmbAvailablePorts";
             this.cmbAvailablePorts.Size = new System.Drawing.Size(121, 21);
             this.cmbAvailablePorts.TabIndex = 14;
@@ -104,7 +104,7 @@ namespace PianoAid4Windows
             // btnStartSong
             // 
             this.btnStartSong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnStartSong.Location = new System.Drawing.Point(148, 500);
+            this.btnStartSong.Location = new System.Drawing.Point(148, 616);
             this.btnStartSong.Name = "btnStartSong";
             this.btnStartSong.Size = new System.Drawing.Size(88, 28);
             this.btnStartSong.TabIndex = 15;
@@ -115,7 +115,7 @@ namespace PianoAid4Windows
             // btnStopSong
             // 
             this.btnStopSong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnStopSong.Location = new System.Drawing.Point(242, 500);
+            this.btnStopSong.Location = new System.Drawing.Point(242, 616);
             this.btnStopSong.Name = "btnStopSong";
             this.btnStopSong.Size = new System.Drawing.Size(86, 28);
             this.btnStopSong.TabIndex = 16;
@@ -126,7 +126,7 @@ namespace PianoAid4Windows
             // btnResetSong
             // 
             this.btnResetSong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnResetSong.Location = new System.Drawing.Point(334, 500);
+            this.btnResetSong.Location = new System.Drawing.Point(334, 616);
             this.btnResetSong.Name = "btnResetSong";
             this.btnResetSong.Size = new System.Drawing.Size(88, 28);
             this.btnResetSong.TabIndex = 17;
@@ -142,7 +142,7 @@ namespace PianoAid4Windows
             this.pnlDebug.Controls.Add(this.btnClearLog);
             this.pnlDebug.Controls.Add(this.txtReceived);
             this.pnlDebug.Controls.Add(this.chkCommunication);
-            this.pnlDebug.Location = new System.Drawing.Point(864, 12);
+            this.pnlDebug.Location = new System.Drawing.Point(1052, 12);
             this.pnlDebug.Name = "pnlDebug";
             this.pnlDebug.Size = new System.Drawing.Size(368, 422);
             this.pnlDebug.TabIndex = 18;
@@ -152,7 +152,7 @@ namespace PianoAid4Windows
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1244, 538);
+            this.ClientSize = new System.Drawing.Size(1432, 654);
             this.Controls.Add(this.pnlDebug);
             this.Controls.Add(this.btnResetSong);
             this.Controls.Add(this.btnStopSong);

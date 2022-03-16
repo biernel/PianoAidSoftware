@@ -98,7 +98,7 @@ namespace PianoAid4Windows
         private static string mapMidiNoteNumberToLedID(int midiNoteNumber)
         {
 
-            var ledID = midiNoteNumber - 24;
+            var ledID = (midiNoteNumber - 36)*2;
 
             return ledID.ToString().PadLeft(2, '0');
 
@@ -228,7 +228,7 @@ namespace PianoAid4Windows
         {
             if (e.KeyCode == Keys.F12 && pnlDebug.Visible)
                 pnlDebug.Visible = false;
-            else
+            else if (e.KeyCode == Keys.F12)
                 pnlDebug.Visible = true;
         }
     }

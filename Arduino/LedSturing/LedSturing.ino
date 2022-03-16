@@ -2,7 +2,8 @@
 #include <FastLED.h>
 
 #define LED_PIN     7
-#define NUM_LEDS    22
+//#define CLOCK_PIN     8
+#define NUM_LEDS    140
 #define WHILE_BREAKER_INPUT_PIN 4
 
 CRGB leds[NUM_LEDS];
@@ -15,7 +16,8 @@ void setup() {
 
   pinMode(WHILE_BREAKER_INPUT_PIN, INPUT);
   
-  FastLED.addLeds<WS2812, LED_PIN, GRB>(leds, NUM_LEDS);
+  //FastLED.addLeds<WS2812, LED_PIN, GRB>(leds, NUM_LEDS);  // <= voor WS2812B
+  FastLED.addLeds<WS2812, LED_PIN, GRB>(leds, NUM_LEDS);    // <= ook voor WS2813
   
   clearAllLeds();
 }
@@ -126,7 +128,7 @@ void serialEvent() {
 
 void clearAllLeds(){
   
-    for(int i = 0;i<22;i++){
+    for(int i = 0;i<NUM_LEDS;i++){
       leds[i] = CRGB(0, 0, 0);
     }
     FastLED.show();

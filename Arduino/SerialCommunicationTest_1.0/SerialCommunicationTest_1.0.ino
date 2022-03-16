@@ -25,7 +25,7 @@ void InitializeButton(){
 }
 
 void InitializeUsbCommunication(){
-  Serial.begin(115200);  //initialize serial comm 
+  Serial.begin(9600);  //initialize serial comm 
 }
 
 void HeartBeatFast(){
